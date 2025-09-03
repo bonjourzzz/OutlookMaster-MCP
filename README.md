@@ -1,6 +1,6 @@
-# Outlook MCP 服务器
+# OutlookMaster-MCP
 
-一个基于模型上下文协议（MCP）的服务器，提供对Microsoft Outlook邮件功能的访问，允许大语言模型和其他MCP客户端通过标准化接口读取、搜索和管理邮件。
+一个功能强大的基于模型上下文协议（MCP）的服务器，提供对Microsoft Outlook邮件功能的全面访问，允许大语言模型和其他MCP客户端通过标准化接口读取、搜索和管理邮件。
 
 ## 🚀 功能特性
 
@@ -100,10 +100,10 @@
 #### 1. 下载项目到本地
 ```bash
 # 方式1：使用Git克隆
-git clone https://github.com/bonjourzzz/outlook-mcp-server.git
+git clone https://github.com/bonjourzzz/OutlookMaster-MCP.git
 
 # 方式2：直接下载ZIP文件
-# 访问 https://github.com/bonjourzzz/outlook-mcp-server
+# 访问 https://github.com/bonjourzzz/OutlookMaster-MCP
 # 点击绿色的 "Code" 按钮 → "Download ZIP"
 # 解压到任意目录，如 C:\Users\你的用户名\outlook-mcp-server-main\
 ```
@@ -132,7 +132,7 @@ pip install mcp>=1.2.0 pywin32>=305
 3. **填写配置参数**：
    ```
    Scope: This workspace (推荐) 或 Global
-   Name: outlook_mcp
+   Name: outlookmaster_mcp
    Transport: stdio
    Command: python
    Arguments: C:\Users\你的用户名\outlook-mcp-server-main\outlook_mcp_server.py
@@ -158,7 +158,7 @@ pip install mcp>=1.2.0 pywin32>=305
 ```json
 {
   "mcpServers": {
-    "outlook": {
+    "outlookmaster": {
       "command": "python",
       "args": ["C:\\path\\to\\your\\outlook_mcp_server.py"],
       "env": {}

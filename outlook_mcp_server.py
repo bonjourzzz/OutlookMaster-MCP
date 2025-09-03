@@ -8,7 +8,7 @@ from typing import List, Optional, Dict, Any
 from mcp.server.fastmcp import FastMCP, Context
 
 # Initialize FastMCP server
-mcp = FastMCP("outlook-assistant")
+mcp = FastMCP("OutlookMaster-MCP")
 
 # Constants
 MAX_DAYS = 30

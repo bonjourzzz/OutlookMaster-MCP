@@ -95,18 +95,63 @@
 
 ## 🛠️ 安装步骤
 
-1. **克隆或下载此仓库**
+### 方法一：VS Code Amazon Q CLI 插件配置（推荐）
+
+#### 1. 下载项目到本地
 ```bash
+# 方式1：使用Git克隆
 git clone https://github.com/bonjourzzz/outlook-mcp-server.git
-cd outlook-mcp-server
+
+# 方式2：直接下载ZIP文件
+# 访问 https://github.com/bonjourzzz/outlook-mcp-server
+# 点击绿色的 "Code" 按钮 → "Download ZIP"
+# 解压到任意目录，如 C:\Users\你的用户名\outlook-mcp-server-main\
 ```
 
-2. **安装所需依赖**
+#### 2. 安装Python依赖
 ```bash
+# 进入项目目录
+cd outlook-mcp-server-main
+
+# 安装依赖包
 pip install mcp>=1.2.0 pywin32>=305
 ```
 
-3. **配置Claude Desktop**
+#### 3. 在VS Code中配置Amazon Q CLI插件
+
+1. **安装插件**：
+   - 打开VS Code
+   - 按 `Ctrl+Shift+X` 打开扩展面板
+   - 搜索 "Amazon Q" 并安装
+
+2. **配置MCP服务器**：
+   - 按 `Ctrl+Shift+P` 打开命令面板
+   - 输入 "Amazon Q: Configure MCP Servers"
+   - 点击 "Add" 添加新的MCP服务器
+
+3. **填写配置参数**：
+   ```
+   Scope: This workspace (推荐) 或 Global
+   Name: outlook_mcp
+   Transport: stdio
+   Command: python
+   Arguments: C:\Users\你的用户名\outlook-mcp-server-main\outlook_mcp_server.py
+   Environment variables: (留空)
+   Timeout: 60
+   ```
+
+   **重要**：请将 `C:\Users\你的用户名\outlook-mcp-server-main\outlook_mcp_server.py` 替换为你实际的文件路径
+
+4. **保存配置**：
+   - 点击 "Add" 保存配置
+   - 重启VS Code或重新加载窗口
+
+#### 4. 验证配置
+- 在VS Code中打开Amazon Q聊天
+- 输入："列出我的邮件文件夹"
+- 如果配置成功，应该能看到Outlook文件夹列表
+
+### 方法二：Claude Desktop配置
 
 将以下内容添加到您的Claude Desktop配置文件中：
 
@@ -201,6 +246,58 @@ python outlook_mcp_server.py
 - **回复建议**: 基于模板和关键词的建议生成
 
 ## 🐛 故障排除
+
+### VS Code Amazon Q CLI 配置问题
+
+#### 问题1: 找不到Python命令
+**错误**: "python不是内部或外部命令"
+
+**解决方案**:
+1. 确保已安装Python 3.10+
+2. 将Python添加到系统PATH环境变量
+3. 或者使用完整路径：`C:\Python\python.exe`
+
+#### 问题2: 文件路径错误
+**错误**: "找不到指定文件"
+
+**解决方案**:
+1. 确保路径使用反斜杠 `\` 或正斜杠 `/`
+2. 检查文件是否存在：`C:\Users\你的用户名\outlook-mcp-server-main\outlook_mcp_server.py`
+3. 避免路径中包含中文字符
+
+#### 问题3: 权限被拒绝
+**错误**: "Access denied" 或权限错误
+
+**解决方案**:
+1. 以管理员身份运行VS Code
+2. 检查文件权限
+3. 确保Outlook正在运行
+
+#### 问题4: MCP服务器无响应
+**错误**: 超时或无响应
+
+**解决方案**:
+1. 增加Timeout值到120秒
+2. 确保Outlook已启动并登录
+3. 重启VS Code和Outlook
+
+### Outlook连接问题
+
+#### 问题1: COM对象访问错误
+**错误**: "COM异常" 或 "对象不支持此属性"
+
+**解决方案**:
+1. 确保Outlook正在运行
+2. 重启Outlook和MCP服务器
+3. 检查Outlook版本兼容性
+
+#### 问题2: 权限不足
+**错误**: "访问被拒绝"
+
+**解决方案**:
+1. 以管理员身份运行
+2. 检查Outlook安全设置
+3. 允许程序化访问
 
 ### 常见问题
 1. **连接问题**: 确保Outlook正在运行且配置正确

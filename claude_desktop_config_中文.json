@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "outlook": {
+      "command": "python",
+      "args": ["C:\\Users\\你的用户名\\outlook-mcp-server-main\\outlook_mcp_server.py"],
+      "env": {}
+    }
+  }
+}

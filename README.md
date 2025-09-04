@@ -97,12 +97,46 @@ Python版本: 3.10.0 或更高版本
 Outlook版本: Microsoft Outlook 2016+ (已配置邮箱账户)
 ```
 
-#### 依赖安装
-```bash
-# 克隆项目仓库
-git clone https://github.com/bonjourzzz/OutlookMaster-MCP.git
-cd OutlookMaster-MCP
+#### 项目下载与依赖安装
 
+**步骤1：下载项目到本地**
+
+*方式1：使用Git命令（推荐）*
+
+1. **打开命令行工具**：
+   - Windows：按 `Win + R`，输入 `cmd`，按回车
+   - 或者：按 `Win + X`，选择"Windows PowerShell"
+
+2. **选择下载位置**：
+   ```bash
+   # 进入桌面（推荐新手使用）
+   cd Desktop
+   
+   # 或者进入其他目录，如文档文件夹
+   cd Documents
+   ```
+
+3. **下载项目**：
+   ```bash
+   git clone https://github.com/bonjourzzz/OutlookMaster-MCP.git
+   cd OutlookMaster-MCP
+   ```
+
+4. **文件位置说明**：
+   - 如果在桌面执行命令，文件会下载到：`C:\Users\你的用户名\Desktop\OutlookMaster-MCP\`
+   - 如果在文档文件夹执行，文件会下载到：`C:\Users\你的用户名\Documents\OutlookMaster-MCP\`
+
+*方式2：直接下载ZIP文件（适合不熟悉命令行的用户）*
+
+1. 访问项目页面：https://github.com/bonjourzzz/OutlookMaster-MCP
+2. 点击绿色的 "Code" 按钮
+3. 选择 "Download ZIP"
+4. 下载完成后，解压到任意目录，建议解压到桌面：`C:\Users\你的用户名\Desktop\OutlookMaster-MCP-main\`
+
+**步骤2：安装Python依赖**
+
+在项目文件夹中打开命令行，执行：
+```bash
 # 安装Python依赖
 pip install mcp>=1.2.0 pywin32>=305
 ```

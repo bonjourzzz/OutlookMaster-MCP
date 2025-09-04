@@ -1,4 +1,4 @@
-# OutlookMaster-MCP ESMNR-Alan
+# OutlookMaster-MCP
 
 一个功能强大的基于模型上下文协议（MCP）的服务器，提供对Microsoft Outlook邮件功能的全面访问，允许大语言模型和其他MCP客户端通过标准化接口读取、搜索和管理邮件。
 

@@ -143,7 +143,7 @@ pip install mcp>=1.2.0 pywin32>=305
 
 ### 配置方案
 
-#### 方案一：Amazon Q CLI集成（推荐）
+#### 方案一：VS Code Amazon Q插件（推荐）
 
 **步骤1：插件安装**
 1. 下载并安装Amazon Q插件
